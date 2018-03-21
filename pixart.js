@@ -52,19 +52,17 @@ colorTextIn.addEventListener('keyup', function (evt) {
 ////////////////////////////////////////////////////////////////////////
 // Create 20 divs of square class
 // function addSquareDivs () {
-  for (let i = 0; i <= 20; i++) {
-    // Make Square Divs
-    let squareDivs = document.createElement('div');
-    squareDivs.setAttribute('class', 'square');
-    // Append to Body
-    document.body.appendChild(squareDivs);
-    // Add Event Listener
-    squareDivs.addEventListener('click', function () {
-    squareDivs.style.backgroundColor = "green";
-    });
-  }
-// }
-// addSquareDivs();
+for (let i = 0; i <= 20; i++) {
+  // Make Square Divs
+  let squareDivs = document.createElement('div');
+  squareDivs.setAttribute('class', 'square');
+  // Append to Body
+  document.body.appendChild(squareDivs);
+  // Add Event Listener
+  squareDivs.addEventListener('click', function () {
+  squareDivs.setAttribute("style", `background-color:${colorTextIn.value};`);
+  });
+}
 ////////////////////////////////////////////////////////////////////////
 // ### Commit 4
 // * Add functionality so that when I click on each "square", it changes
@@ -77,7 +75,8 @@ colorTextIn.addEventListener('keyup', function (evt) {
 // ### Commit 5
 // * Modify your code so that when I click on each "square", it changes
 // to the color I set using my input instead of "green" every time.
-
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
 // ### Commit 6
 // * Modify the CSS so that the "square" class has a height and width of
 // 10px and a margin of 0.
