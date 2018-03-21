@@ -52,14 +52,17 @@ colorTextIn.addEventListener('keyup', function (evt) {
 ////////////////////////////////////////////////////////////////////////
 // Create 20 divs of square class
 // function addSquareDivs () {
-for (let i = 0; i <= 20; i++) {
+for (let i = 0; i <= 8000; i++) {
   // Make Square Divs
   let squareDivs = document.createElement('div');
   squareDivs.setAttribute('class', 'square');
+  squareDivs.setAttribute('height', '10px');
+  squareDivs.setAttribute('width', '10px');
+  squareDivs.setAttribute('margin', '0');
   // Append to Body
   document.body.appendChild(squareDivs);
   // Add Event Listener
-  squareDivs.addEventListener('click', function () {
+  squareDivs.addEventListener('mouseover', function () {
   squareDivs.setAttribute("style", `background-color:${colorTextIn.value};`);
   });
 }
@@ -76,6 +79,7 @@ for (let i = 0; i <= 20; i++) {
 // * Modify your code so that when I click on each "square", it changes
 // to the color I set using my input instead of "green" every time.
 ////////////////////////////////////////////////////////////////////////
+
 ////////////////////////////////////////////////////////////////////////
 // ### Commit 6
 // * Modify the CSS so that the "square" class has a height and width of
@@ -84,7 +88,9 @@ for (let i = 0; i <= 20; i++) {
 // * Change the event that changes your box colors from 'click' to
 // 'mouseover'
 // * Paint a picture!
+////////////////////////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////////////////////////
 // ### Bonus
 // * Add a color swatch. You should have 3 boxes with the most recent 3
 // colors used. When you click on each of those boxes, it should set the
