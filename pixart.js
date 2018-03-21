@@ -21,11 +21,13 @@ document.querySelector('.square')
 let colorTextIn = document.querySelector('#color-field');
 let colorSet = document.querySelector('#set-color');
 let brushChange = document.querySelector('.brush');
-// Get Color from Input
-colorSet.addEventListener("click", function(){
+// Color Change Function
+let brushChangeFunc = function () {
   // Set Color to Brush
   brushChange.style.backgroundColor = colorTextIn.value;
-});
+}
+// Get Color from Input
+colorSet.addEventListener("click", brushChangeFunc);
 // Prevent Refresh
 colorSet.addEventListener("click", function (e) {
   e.preventDefault()});
@@ -34,8 +36,14 @@ colorSet.addEventListener("click", function (e) {
 // * The same thing should happen when I press the enter key from inside
 // the input field
 ////////////////////////////////////////////////////////////////////////
-
-
+// Event Listener for Enter Keypress
+colorTextIn.addEventListener('keyup', function (evt) {
+    // Check Keycode = Enter Key(13)
+    if (evt.keycode === 13) {
+    // Call Brush
+    brushChangeFunc();
+    }
+});
 ////////////////////////////////////////////////////////////////////////
 // ### Commit 3
 // * Create 20 divs of the "square" class and append them to the body
