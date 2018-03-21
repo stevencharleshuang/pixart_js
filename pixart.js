@@ -21,6 +21,7 @@ document.querySelector('.square')
 let colorTextIn = document.querySelector('#color-field');
 let colorSet = document.querySelector('#set-color');
 let brushChange = document.querySelector('.brush');
+let canvasSquare = document.querySelector('div')
 // Color Change Function
 let brushChangeFunc = function () {
   // Set Color to Brush
@@ -50,16 +51,20 @@ colorTextIn.addEventListener('keyup', function (evt) {
 //   * **Hint**: use `.appendChild()`
 ////////////////////////////////////////////////////////////////////////
 // Create 20 divs of square class
-function addSquareDivs () {
+// function addSquareDivs () {
   for (let i = 0; i <= 20; i++) {
     // Make Square Divs
     let squareDivs = document.createElement('div');
     squareDivs.setAttribute('class', 'square');
     // Append to Body
     document.body.appendChild(squareDivs);
+    // Add Event Listener
+    squareDivs.addEventListener('click', function () {
+    squareDivs.style.backgroundColor = "green";
+    });
   }
-}
-addSquareDivs();
+// }
+// addSquareDivs();
 ////////////////////////////////////////////////////////////////////////
 // ### Commit 4
 // * Add functionality so that when I click on each "square", it changes
@@ -68,8 +73,7 @@ addSquareDivs();
 // squares, or listen for events on the `body` element
 ////////////////////////////////////////////////////////////////////////
 
-
-
+////////////////////////////////////////////////////////////////////////
 // ### Commit 5
 // * Modify your code so that when I click on each "square", it changes
 // to the color I set using my input instead of "green" every time.
